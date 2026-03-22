@@ -1,6 +1,9 @@
 // Sistema de Control de Ventas de una Tienda
 # include <iostream>
 using namespace std;
+string nombres[10];
+double precios[10];
+int n = 0;
 
 void Menu(){
     cout << "===== SISTEMA DE VENTAS =====" << endl;
@@ -14,14 +17,75 @@ void Menu(){
     cout << "Seleccione una opcion: ";
 }
 
+bool NombreVal(string nombre)
+{
+    for(int i = 0; i < nombre.length(); i++)
+    {
+        if(isalpha(nombre[i]) || nombre[i] == ' ')
+        {
+            return true; 
+        }
+    }
+    return false; 
+}
+
+bool PrecioVal(string precio)
+{
+    for(int i = 0; i < precio.length(); i++)
+    {
+        if(!isdigit(precio[i]) && precio[i] != '.')
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+void Registro(){
+    
+    cout << "Ingrese el número de productos a registrar: ";
+    cin >> n;
+    nombres[n];
+    for (int i = 0; i < n; i++){
+        string nombre;
+        do
+        {
+            cout << "Ingrese el nombre del producto " << (i+1) << ":"<< endl;
+            cin >> nombre;
+            NombreVal (nombre);
+            if (NombreVal(nombre) == false){
+                cout << "El nombre debe contener solo letras" << endl;
+            }
+
+        } while (!NombreVal(nombre));
+        nombres[i] = nombre;
+    } 
+    
+    precios[n];
+    for (int i = 0; i < n; i++){
+        string precio;
+        double preci;
+        do {
+            cout << "Ingrese el precio (" << nombres[i] << "):" << endl;
+            cin >> precio;
+            PrecioVal (precio);
+            if (PrecioVal(precio) == false){
+                cout << "El precio no debe contener letras" << endl;
+            }
+            preci = stod(precio);
+        } while (!PrecioVal(precio));
+        precios [i] = preci;
+    } 
+}
+
 void Opcion (int opcion){
     switch (opcion)
     {
     case 1:
-        //Registro();
+        Registro();
         break;
     case 2:
-        //Mostar();
+        //Mostrar();
         break;
     case 3:
         //Calcular();
