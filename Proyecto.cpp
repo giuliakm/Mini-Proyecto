@@ -92,6 +92,25 @@ void Mostrar (){
     cout << "===== LISTA DE PRODUCTOS =====";
 }
 
+void Calcular()
+{
+    if(n == 0)
+    {
+        cout << "No hay productos registrados.";
+        return;
+    }
+
+    double total = 0;
+
+    for(int i = 0; i < n; i++)
+    {
+        total += precios[i];
+    }
+
+    cout << "===== TOTAL DE VENTAS =====";
+    cout << "Total de ventas: $" << total << endl;
+}
+
 void Opcion (int opcion){
     switch (opcion)
     {
@@ -102,7 +121,7 @@ void Opcion (int opcion){
         Mostrar();
         break;
     case 3:
-        //Calcular();
+        Calcular();
         break;
     case 4:
         //Buscar();
