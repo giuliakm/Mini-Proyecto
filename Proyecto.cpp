@@ -111,6 +111,39 @@ void Calcular()
     cout << "Total de ventas: $" << total << endl;
 }
 
+void Buscar()
+{
+    if(n == 0)
+    {
+        cout << "No hay productos registrados.\n";
+        return;
+    }
+
+    string nBuscar;
+    bool encontrado = false;
+
+    cout << "Ingrese el nombre del producto a buscar: ";
+    cin >> nBuscar;
+
+    for(int i = 0; i < n; i++)
+    {
+        if(nombres[i] == nBuscar)
+        {
+            cout << "\nProducto encontrado:\n";
+            cout << "Nombre: " << nombres[i] << endl;
+            cout << "Precio: $" << precios[i] << endl;
+
+            encontrado = true;
+            break;
+        }
+    }
+
+    if(!encontrado)
+    {
+        cout << "Producto no encontrado.\n";
+    }
+}
+
 void Opcion (int opcion){
     switch (opcion)
     {
@@ -124,7 +157,7 @@ void Opcion (int opcion){
         Calcular();
         break;
     case 4:
-        //Buscar();
+        Buscar();
         break;
     case 5:
         //ProductoCaro();
