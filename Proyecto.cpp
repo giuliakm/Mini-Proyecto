@@ -78,6 +78,20 @@ void Registro(){
     } 
 }
 
+void Mostrar (){
+    if(n == 0)
+    {
+        cout << "No hay productos registrados." << endl;
+        return;
+    }
+
+    for (int i = 0; i < n; i++){
+        cout << i + 1 << ". " << nombres[i] << " - $" << precios[i] << endl;
+    }
+
+    cout << "===== LISTA DE PRODUCTOS =====";
+}
+
 void Opcion (int opcion){
     switch (opcion)
     {
@@ -85,7 +99,7 @@ void Opcion (int opcion){
         Registro();
         break;
     case 2:
-        //Mostrar();
+        Mostrar();
         break;
     case 3:
         //Calcular();
