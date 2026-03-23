@@ -85,11 +85,10 @@ void Mostrar (){
         return;
     }
 
+    cout << "===== LISTA DE PRODUCTOS =====" << endl;
     for (int i = 0; i < n; i++){
         cout << i + 1 << ". " << nombres[i] << " - $" << precios[i] << endl;
     }
-
-    cout << "===== LISTA DE PRODUCTOS =====";
 }
 
 void Calcular()
@@ -107,7 +106,7 @@ void Calcular()
         total += precios[i];
     }
 
-    cout << "===== TOTAL DE VENTAS =====";
+    cout << "===== TOTAL DE VENTAS =====" << endl;
     cout << "Total de ventas: $" << total << endl;
 }
 
@@ -129,7 +128,7 @@ void Buscar()
     {
         if(nombres[i] == nBuscar)
         {
-            cout << "Producto encontrado:";
+            cout << "Producto encontrado" << endl;
             cout << "Nombre: " << nombres[i] << endl;
             cout << "Precio: $" << precios[i] << endl;
 
@@ -164,7 +163,7 @@ void ProductoCaro()
         }
     }
 
-    cout << "===== PRODUCTO MAS CARO =====";
+    cout << "===== PRODUCTO MAS CARO =====" << endl;
     cout << "Nombre: " << nombres[ubi] << endl;
     cout << "Precio: $" << precios[ubi] << endl;
 }
