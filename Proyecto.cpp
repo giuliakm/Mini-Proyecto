@@ -169,6 +169,12 @@ void ProductoCaro()
     cout << "Precio: $" << precios[ubi] << endl;
 }
 
+void Estadisticas (){
+    Mostrar();
+    Calcular();
+    ProductoCaro();
+}
+
 void Opcion (int opcion){
     switch (opcion)
     {
@@ -185,10 +191,10 @@ void Opcion (int opcion){
         Buscar();
         break;
     case 5:
-        //ProductoCaro();
+        ProductoCaro();
         break;
     case 6:
-        //Estadisticas();
+        Estadisticas();
         break;
     case 7:
         cout << "Saliendo del programa ..." << endl;
