@@ -115,7 +115,7 @@ void Buscar()
 {
     if(n == 0)
     {
-        cout << "No hay productos registrados.\n";
+        cout << "No hay productos registrados.";
         return;
     }
 
@@ -129,7 +129,7 @@ void Buscar()
     {
         if(nombres[i] == nBuscar)
         {
-            cout << "\nProducto encontrado:\n";
+            cout << "Producto encontrado:";
             cout << "Nombre: " << nombres[i] << endl;
             cout << "Precio: $" << precios[i] << endl;
 
@@ -140,8 +140,33 @@ void Buscar()
 
     if(!encontrado)
     {
-        cout << "Producto no encontrado.\n";
+        cout << "Producto no encontrado.";
     }
+}
+
+void ProductoCaro()
+{
+    if(n == 0)
+    {
+        cout << "No hay productos registrados.";
+        return;
+    }
+
+    int ubi;
+    double mayor = precios[0];
+
+    for(int i = 1; i < n; i++)
+    {
+        if(precios[i] > mayor)
+        {
+            mayor = precios[i];
+            ubi = i;
+        }
+    }
+
+    cout << "===== PRODUCTO MAS CARO =====";
+    cout << "Nombre: " << nombres[ubi] << endl;
+    cout << "Precio: $" << precios[ubi] << endl;
 }
 
 void Opcion (int opcion){
